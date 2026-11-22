@@ -138,6 +138,17 @@ section.block{padding:56px 0 8px}
 .coin .status-list b{display:block;font-family:"Sora",sans-serif;font-size:.95rem;margin-bottom:2px}
 .coin .status-list span{color:var(--muted)}
 
+/* Layanan */
+.services{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:700px){.services{grid-template-columns:1fr}}
+.svc{position:relative;background:var(--card);border:1px solid var(--line-soft);border-radius:var(--radius);padding:24px}
+.svc .num{font-family:"Sora",sans-serif;color:var(--orange);font-weight:800;font-size:.85rem;letter-spacing:.1em}
+.svc h3{font-size:1.18rem;margin:10px 0 8px}
+.svc p{color:var(--muted);font-size:.96rem}
+.svc-note{margin-top:18px;background:var(--orange-dim);border:1px solid rgba(224,123,57,.3);border-radius:var(--radius);padding:18px 20px;color:var(--text);font-size:.97rem}
+.svc-note strong{color:var(--orange-bright)}
+.svc-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+
 /* Social */
 .social-grid{display:flex;flex-wrap:wrap;gap:12px}
 .social{flex:1 1 calc(25% - 12px)}
@@ -218,12 +229,15 @@ header.site.scrolled{background:rgba(15,15,17,.94);box-shadow:0 12px 32px rgba(0
 .spot::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(340px circle at var(--mx,50%) var(--my,50%),rgba(240,154,90,.13),transparent 65%);opacity:0;transition:opacity .35s ease;pointer-events:none;z-index:0}
 .spot:hover::before{opacity:1}
 .spot>*{position:relative;z-index:1}
-.pillar,.rule,.member,.ep,.social,.stat{transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}
-.pillar:hover,.member:hover,.ep:hover,.social:hover,.stat:hover{transform:translateY(-5px);border-color:rgba(224,123,57,.5);box-shadow:0 18px 38px rgba(0,0,0,.38)}
+.pillar,.rule,.member,.ep,.social,.stat,.svc{transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}
+.pillar:hover,.member:hover,.ep:hover,.social:hover,.stat:hover,.svc:hover{transform:translateY(-5px);border-color:rgba(224,123,57,.5);box-shadow:0 18px 38px rgba(0,0,0,.38)}
 .rule:hover{transform:translateY(-3px);border-color:rgba(224,123,57,.45)}
 .pillar{overflow:hidden}
 .pillar::after{content:"";position:absolute;top:0;left:0;height:3px;width:100%;background:linear-gradient(90deg,var(--orange),var(--orange-bright));transform:scaleX(0);transform-origin:left;transition:transform .45s ease}
 .pillar:hover::after{transform:scaleX(1)}
+.svc{overflow:hidden}
+.svc::after{content:"";position:absolute;top:0;left:0;height:3px;width:100%;background:linear-gradient(90deg,var(--orange),var(--orange-bright));transform:scaleX(0);transform-origin:left;transition:transform .45s ease}
+.svc:hover::after{transform:scaleX(1)}
 
 /* Kartu episode: nomor hantu besar */
 .ep{overflow:hidden}
@@ -255,7 +269,7 @@ html.js .rv.in{opacity:1;transform:none;filter:none}
   .hero-banner::after,.coin::after,.ticker-track,.hero-chip,.eyebrow i,.hero-copy h1 em::after{animation:none !important}
   .hero-banner img{transform:none}
   html.js .rv{opacity:1;transform:none;filter:none;transition:none}
-  .pillar:hover,.member:hover,.ep:hover,.social:hover,.stat:hover,.rule:hover,.btn:hover,.watch a:hover{transform:none}
+  .pillar:hover,.member:hover,.ep:hover,.social:hover,.stat:hover,.rule:hover,.svc:hover,.btn:hover,.watch a:hover{transform:none}
 }
 </style>
 </head>
@@ -560,6 +574,42 @@ html.js .rv.in{opacity:1;transform:none;filter:none}
     </div>
   </section>
 
+  <!-- LAYANAN & KERJA SAMA -->
+  <section class="block wrap" id="layanan">
+    <div class="sec-head">
+      <p class="kicker">Layanan &amp; Kerja Sama</p>
+      <h2>Kami menerima pesanan pembuatan konten</h2>
+      <p>AnnaWorks Studio menerima pesanan pembuatan konten untuk brand, produk, dan UMKM. Kami studio baru yang sedang bertumbuh: setiap pesanan dikerjakan oleh tim agen AI dengan arahan dan persetujuan manusia di setiap tahap. Kami tidak menjanjikan viral — yang kami janjikan adalah proses yang rapi dan hasil yang bisa kamu periksa sebelum tayang.</p>
+    </div>
+    <div class="services">
+      <article class="svc">
+        <p class="num">01 — VIDEO</p>
+        <h3>Video Konten Pendek</h3>
+        <p>Video vertikal siap tayang untuk TikTok, Reels, dan Shorts — lengkap dari naskah, sulih suara, caption animasi kata-per-kata, dan musik, sampai penjadwalan tayang.</p>
+      </article>
+      <article class="svc">
+        <p class="num">02 — PROMOSI</p>
+        <h3>Konten Promosi Brand &amp; Produk</h3>
+        <p>Konten promosi yang jujur dan tidak berlebihan untuk peluncuran produk, promo, dan kampanye brand — pesannya jelas, klaimnya bisa dipertanggungjawabkan.</p>
+      </article>
+      <article class="svc">
+        <p class="num">03 — TULISAN</p>
+        <h3>Naskah, Caption &amp; Ide Konten</h3>
+        <p>Penulisan naskah video, caption media sosial, dan perencanaan ide konten yang konsisten dengan karakter brand kamu — supaya feed tidak jalan sendiri-sendiri.</p>
+      </article>
+      <article class="svc">
+        <p class="num">04 — VISUAL</p>
+        <h3>Visual &amp; Logo Sederhana</h3>
+        <p>Logo sederhana, banner, dan visual pendukung untuk profil dan promosi — cukup untuk tampil rapi dan dikenali, tanpa berlebihan.</p>
+      </article>
+    </div>
+    <p class="svc-note">💰 <strong>Harga menyesuaikan kebutuhan</strong> — hubungi kami untuk penawaran. Ceritakan kebutuhanmu, kami balas dengan rincian pengerjaan dan estimasinya.</p>
+    <div class="svc-actions">
+      <a class="btn btn-primary" href="mailto:annaworksstudio@gmail.com">Email Kami ✉</a>
+      <a class="btn btn-ghost" href="https://t.me/annaworksstudio" target="_blank" rel="noopener">Chat via Telegram ↗</a>
+    </div>
+  </section>
+
   <!-- SOSIAL -->
   <section class="block wrap" id="ikuti">
     <div class="sec-head">
@@ -618,7 +668,7 @@ html.js .rv.in{opacity:1;transform:none;filter:none}
 
   /* Sorotan cahaya mengikuti kursor di kartu (hanya penunjuk halus) */
   if (window.matchMedia('(pointer: fine)').matches && !reduced) {
-    document.querySelectorAll('.pillar,.rule,.member,.ep,.social,.stat,.coin').forEach(function(el){
+    document.querySelectorAll('.pillar,.rule,.member,.ep,.social,.stat,.coin,.svc').forEach(function(el){
       el.classList.add('spot');
       el.addEventListener('pointermove', function(e){
         var r = el.getBoundingClientRect();
@@ -630,7 +680,7 @@ html.js .rv.in{opacity:1;transform:none;filter:none}
 
   /* Muncul lembut saat digulir, berjenjang per grup */
   var revealTargets = document.querySelectorAll(
-    '.hero-copy,.stat,.sec-head,.pillar,.rule,.member,.ep,.coin,.social,.schedule-note,.disclaimer'
+    '.hero-copy,.stat,.sec-head,.pillar,.rule,.member,.ep,.coin,.svc,.svc-note,.social,.schedule-note,.disclaimer'
   );
   if (!reduced && 'IntersectionObserver' in window) {
     document.documentElement.classList.add('js');
